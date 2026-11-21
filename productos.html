@@ -2,27 +2,22 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- Siempre cargar la versión más reciente (los cambios se ven al recargar) -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos | Faweb</title>
-    <meta name="description" content="Catálogo de categorías de Faweb: Baja, Media, Alta y Premium.">
-    <script>/* carga index.css siempre actualizado */document.write('<link rel="stylesheet" href="index.css?v=' + Date.now() + '">');</script>
-    <noscript><link rel="stylesheet" href="index.css"></noscript>
+    <meta name="description" content="Catálogo de productos de Faweb organizados por categoría.">
+    <link rel="icon" href="img/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/tienda.css">
 </head>
 <body>
 
     <!-- ENCABEZADO -->
     <header class="header">
         <a href="index.html" class="logo">
-            <img src="Captura.PNG" alt="Logo Faweb" class="logo-img"
-                 onerror="this.src='https://via.placeholder.com/50/dfc2a9/ffffff?text=F'">
+            <img src="img/logo.png" alt="Logo Faweb" class="logo-img">
             <div class="logo-text">
                 <h1>faweb</h1>
                 <span>DISEÑO Y DESARROLLO WEB</span>
@@ -30,14 +25,17 @@
         </a>
 
         <nav class="menu" id="menu" aria-label="Navegación principal">
-                <a href="index.html">Inicio</a>
-                <a href="productos.html" class="active" aria-current="page">Productos</a>
-                <a href="nosotros.html">Sobre nosotros</a>
-                <a href="contacto.html">Contacto</a>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html" class="active" aria-current="page">Productos</a>
+            <a href="nosotros.html">Sobre nosotros</a>
+            <a href="contacto.html">Contacto</a>
         </nav>
 
         <div class="header-actions">
-            <a href="carrito.html" class="cart-button" aria-label="Ver carrito">
+            <div class="cuenta" id="cuenta">
+                <a href="./login.html" class="cuenta-btn">👤 <span>Ingresar</span></a>
+            </div>
+            <a href="./carrito.html" class="cart-button" aria-label="Ver carrito">
                 🛒 <span id="contador">0</span>
             </a>
             <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
@@ -50,96 +48,41 @@
         <section class="page-hero">
             <p class="small-title">CATÁLOGO</p>
             <h2>Nuestros productos</h2>
-            <p>Cuatro categorías pensadas para todos los gustos y presupuestos. Entra a cada una para ver sus detalles.</p>
+            <p>Explora el catálogo completo, filtra por categoría y haz clic en cualquier producto para ver toda su información.</p>
         </section>
 
-        <section class="categories">
-            <div class="cards">
-                <article class="card">
-                    <div class="card-image">
-                        <a href="producto-1.html" tabindex="-1" aria-hidden="true">
-                            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=80" alt="Categoría baja" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <span class="category-label">CATEGORÍA 01</span>
-                        <h3><a href="producto-1.html">Baja</a></h3>
-                        <p>Opciones accesibles y sencillas, ideales para quienes buscan calidad a un precio cómodo.</p>
-                        <a class="card-link" href="producto-1.html">Ver detalles →</a>
-                        <div class="card-bottom">
-                            <span>Desde $100.000</span>
-                            <button type="button" data-add="1">Agregar 🛒</button>
-                        </div>
-                    </div>
-                </article>
+        <section class="categories catalogo">
+            <form class="filtros" id="filtros" role="search" aria-label="Filtrar productos">
+                <div class="filtros-busqueda">
+                    <span aria-hidden="true">🔍</span>
+                    <input type="search" id="buscar" name="q" placeholder="Buscar por nombre, referencia o descripción…" aria-label="Buscar productos" maxlength="80">
+                </div>
+                <select id="orden" name="orden" aria-label="Ordenar">
+                    <option value="recientes">Más recientes</option>
+                    <option value="precio-asc">Precio: menor a mayor</option>
+                    <option value="precio-desc">Precio: mayor a menor</option>
+                    <option value="nombre">Nombre (A-Z)</option>
+                </select>
+                <label class="interruptor">
+                    <input type="checkbox" id="solo-disponibles" name="disponible">
+                    <span>Solo disponibles</span>
+                </label>
+            </form>
+            <div class="chips" id="chips-categorias" role="group" aria-label="Categorías"></div>
 
-                <article class="card">
-                    <div class="card-image">
-                        <a href="producto-2.html" tabindex="-1" aria-hidden="true">
-                            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=80" alt="Categoría media" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <span class="category-label">CATEGORÍA 02</span>
-                        <h3><a href="producto-2.html">Media</a></h3>
-                        <p>Página web con lo esencial para mostrar tus productos y recibir los pedidos del carrito directamente, para que el administrador finalice la compra.</p>
-                        <a class="card-link" href="producto-2.html">Ver detalles →</a>
-                        <div class="card-bottom">
-                            <span>Desde $200.000</span>
-                            <button type="button" data-add="2">Agregar 🛒</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image">
-                        <a href="producto-3.html" tabindex="-1" aria-hidden="true">
-                            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80" alt="Categoría alta" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <span class="category-label">CATEGORÍA 03</span>
-                        <h3><a href="producto-3.html">Alta</a></h3>
-                        <p>Pagina web con carrito, sobre nosotros, contacto, aministrador y base de datos completa.
-                           La cual permite al administrador ver sus pedidos y subir o eliminar productos; al cliente le permite registrarse y iniciar sus compras de manera segura.
-                        </p>
-                        <a class="card-link" href="producto-3.html">Ver detalles →</a>
-                        <div class="card-bottom">
-                            <span>Desde $250.000</span>
-                            <button type="button" data-add="3">Agregar 🛒</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card premium-card">
-                    <div class="premium-badge">EXCLUSIVO</div>
-                    <div class="card-image">
-                        <a href="producto-4.html" tabindex="-1" aria-hidden="true">
-                            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=80" alt="Categoría premium" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <span class="category-label">CATEGORÍA 04</span>
-                        <h3><a href="producto-4.html">Premium</a></h3>
-                        <p>Nuestra selección más exclusiva, creada para quienes buscan una pagina personalizada con carrito, sobre nosotros, pestaña de administrador y asesor de inteligencia artificial personalizada.</p>
-                        <a class="card-link" href="producto-4.html">Ver detalles →</a>
-                        <div class="card-bottom">
-                            <span>Desde $350.000</span>
-                            <button type="button" data-add="4">Agregar 🛒</button>
-                        </div>
-                    </div>
-                </article>
+            <p class="resultado-conteo" id="conteo" aria-live="polite"></p>
+            <div class="cards" id="contenedor-productos" aria-live="polite">
+                <div class="cards-estado cargando" role="status"><span class="spinner"></span> Cargando…</div>
             </div>
         </section>
     </main>
 
-    <!-- PIE DE PÁGINA -->
+    <!-- PIE DE PÁGINA (los datos de contacto se cargan desde MongoDB) -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="footer-brand-header">
-                    <img src="Captura.PNG" alt="Logo Faweb" class="footer-logo-img"
-                         onerror="this.src='https://via.placeholder.com/45/dfc2a9/ffffff?text=F'">
+                    <img src="img/logo.png" alt="Logo Faweb" class="footer-logo-img">
                     <h2>faweb</h2>
                 </div>
                 <p>Productos seleccionados para acompañar cada momento especial.</p>
@@ -163,18 +106,20 @@
 
             <div class="footer-column">
                 <h3>Contacto</h3>
-                <p>📧 contacto@faweb.com</p>
-                <p>📱 +57 300 000 0000</p>
-                <p>📍 Colombia</p>
+                <p>📧 <span data-config="correo">contacto@faweb.com</span></p>
+                <p>📱 <span data-config="telefonoVisible">+57 300 000 0000</span></p>
+                <p>📍 <span data-config="ubicacion">Colombia</span></p>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>© 2026 Faweb. Todos los derechos reservados.</p>
+            <p>© <span data-anio>2026</span> <span data-config="nombreTienda">Faweb</span>. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script>/* carga app.js siempre actualizado */document.write('<script src="app.js?v=' + Date.now() + '"><\/script>');</script>
+    <script src="scrip/nucleo.js"></script>
+    <script src="scrip/carrito.js"></script>
+    <script src="scrip/catalogo.js"></script>
 </body>
 </html>

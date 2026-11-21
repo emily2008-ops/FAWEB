@@ -2,27 +2,22 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- Siempre cargar la versión más reciente (los cambios se ven al recargar) -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | Faweb</title>
     <meta name="description" content="Contacta a Faweb por correo, teléfono o formulario.">
-    <script>/* carga index.css siempre actualizado */document.write('<link rel="stylesheet" href="index.css?v=' + Date.now() + '">');</script>
-    <noscript><link rel="stylesheet" href="index.css"></noscript>
+    <link rel="icon" href="img/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/tienda.css">
 </head>
 <body>
 
     <!-- ENCABEZADO -->
     <header class="header">
         <a href="index.html" class="logo">
-            <img src="Captura.PNG" alt="Logo Faweb" class="logo-img"
-                 onerror="this.src='https://via.placeholder.com/50/dfc2a9/ffffff?text=F'">
+            <img src="img/logo.png" alt="Logo Faweb" class="logo-img">
             <div class="logo-text">
                 <h1>faweb</h1>
                 <span>DISEÑO Y DESARROLLO WEB</span>
@@ -30,13 +25,16 @@
         </a>
 
         <nav class="menu" id="menu" aria-label="Navegación principal">
-                <a href="index.html">Inicio</a>
-                <a href="productos.html">Productos</a>
-                <a href="nosotros.html">Sobre nosotros</a>
-                <a href="contacto.html" class="active" aria-current="page">Contacto</a>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Sobre nosotros</a>
+            <a href="contacto.html" class="active" aria-current="page">Contacto</a>
         </nav>
 
         <div class="header-actions">
+            <div class="cuenta" id="cuenta">
+                <a href="login.html" class="cuenta-btn">👤 <span>Ingresar</span></a>
+            </div>
             <a href="carrito.html" class="cart-button" aria-label="Ver carrito">
                 🛒 <span id="contador">0</span>
             </a>
@@ -60,25 +58,21 @@
                     <form id="form-contacto" novalidate>
                         <div class="field">
                             <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+                            <input type="text" id="nombre" name="nombre" autocomplete="name" maxlength="80" required>
                         </div>
                         <div class="field">
                             <label for="correo">Correo electrónico</label>
-                            <input type="email" id="correo" name="correo" autocomplete="email" required>
+                            <input type="email" id="correo" name="correo" autocomplete="email" maxlength="120" required>
                         </div>
                         <div class="field">
                             <label for="interes">Me interesa</label>
                             <select id="interes" name="interes">
                                 <option>Información general</option>
-                                <option>Categoría Baja</option>
-                                <option>Categoría Media</option>
-                                <option>Categoría Alta</option>
-                                <option>Categoría Premium</option>
                             </select>
                         </div>
                         <div class="field">
                             <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" required></textarea>
+                            <textarea id="mensaje" name="mensaje" maxlength="2000" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar mensaje</button>
                         <p class="form-note" id="form-nota"></p>
@@ -87,22 +81,21 @@
 
                 <aside class="info-box">
                     <h3>Información de contacto</h3>
-                    <div class="info-item"><span class="icon">📧</span><div><strong>Correo</strong>contacto@faweb.com</div></div>
-                    <div class="info-item"><span class="icon">📱</span><div><strong>WhatsApp / Teléfono</strong>+57 304 425 4270</div></div>
-                    <div class="info-item"><span class="icon">📍</span><div><strong>Ubicación</strong>Colombia</div></div>
-                    <div class="info-item"><span class="icon">❓</span><div><strong>¿Dudas rápidas?</strong><a class="card-link" style="margin:0" href="ayuda.html#preguntas">Ver preguntas frecuentes</a></div></div>
+                    <div class="info-item"><span class="icon">📧</span><div><strong>Correo</strong><span data-config="correo">contacto@faweb.com</span></div></div>
+                    <div class="info-item"><span class="icon">📱</span><div><strong>WhatsApp / Teléfono</strong><span data-config="telefonoVisible">+57 300 000 0000</span></div></div>
+                    <div class="info-item"><span class="icon">📍</span><div><strong>Ubicación</strong><span data-config="ubicacion">Colombia</span></div></div>
+                    <div class="info-item"><span class="icon">❓</span><div><strong>¿Dudas rápidas?</strong><a class="card-link sin-margen" href="ayuda.html#preguntas">Ver preguntas frecuentes</a></div></div>
                 </aside>
             </div>
         </section>
     </main>
 
-    <!-- PIE DE PÁGINA -->
+    <!-- PIE DE PÁGINA (los datos de contacto se cargan desde MongoDB) -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="footer-brand-header">
-                    <img src="Captura.PNG" alt="Logo Faweb" class="footer-logo-img"
-                         onerror="this.src='https://via.placeholder.com/45/dfc2a9/ffffff?text=F'">
+                    <img src="img/logo.png" alt="Logo Faweb" class="footer-logo-img">
                     <h2>faweb</h2>
                 </div>
                 <p>Productos seleccionados para acompañar cada momento especial.</p>
@@ -126,18 +119,19 @@
 
             <div class="footer-column">
                 <h3>Contacto</h3>
-                <p>📧 contacto@faweb.com</p>
-                <p>📱 +57 304 425 4270</p>
-                <p>📍 Colombia</p>
+                <p>📧 <span data-config="correo">contacto@faweb.com</span></p>
+                <p>📱 <span data-config="telefonoVisible">+57 300 000 0000</span></p>
+                <p>📍 <span data-config="ubicacion">Colombia</span></p>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>© 2026 Faweb. Todos los derechos reservados.</p>
+            <p>© <span data-anio>2026</span> <span data-config="nombreTienda">Faweb</span>. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script>/* carga app.js siempre actualizado */document.write('<script src="app.js?v=' + Date.now() + '"><\/script>');</script>
+    <script src="scrip/nucleo.js"></script>
+    <script src="scrip/carrito.js"></script>
 </body>
 </html>
