@@ -2,22 +2,27 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- Siempre cargar la versión más reciente (los cambios se ven al recargar) -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre nosotros | Faweb</title>
     <meta name="description" content="Conoce a Faweb: nuestra historia, valores y compromiso con la calidad.">
-    <link rel="icon" href="img/logo.png">
+    <script>/* carga index.css siempre actualizado */document.write('<link rel="stylesheet" href="index.css?v=' + Date.now() + '">');</script>
+    <noscript><link rel="stylesheet" href="index.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/tienda.css">
 </head>
 <body>
 
     <!-- ENCABEZADO -->
     <header class="header">
         <a href="index.html" class="logo">
-            <img src="img/logo.png" alt="Logo Faweb" class="logo-img">
+            <img src="Captura.PNG" alt="Logo Faweb" class="logo-img"
+                 onerror="this.src='https://via.placeholder.com/50/dfc2a9/ffffff?text=F'">
             <div class="logo-text">
                 <h1>faweb</h1>
                 <span>DISEÑO Y DESARROLLO WEB</span>
@@ -25,16 +30,13 @@
         </a>
 
         <nav class="menu" id="menu" aria-label="Navegación principal">
-            <a href="index.html">Inicio</a>
-            <a href="productos.html">Productos</a>
-            <a href="nosotros.html" class="active" aria-current="page">Sobre nosotros</a>
-            <a href="contacto.html">Contacto</a>
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="nosotros.html" class="active" aria-current="page">Sobre nosotros</a>
+                <a href="contacto.html">Contacto</a>
         </nav>
 
         <div class="header-actions">
-            <div class="cuenta" id="cuenta">
-                <a href="login.html" class="cuenta-btn">👤 <span>Ingresar</span></a>
-            </div>
             <a href="carrito.html" class="cart-button" aria-label="Ver carrito">
                 🛒 <span id="contador">0</span>
             </a>
@@ -58,8 +60,8 @@
             <div class="about-content">
                 <p class="small-title">NUESTRA HISTORIA</p>
                 <h2>Quiénes somos</h2>
-                <p>Somos una tienda dedicada a ofrecer páginas web cuidadosamente creadas para diferentes estilos, necesidades y presupuestos.</p>
-                <p>Nuestro objetivo es brindar una experiencia sencilla, agradable y confiable, permitiendo que cada persona encuentre una página web que se adapte a sus gustos.</p>
+                <p>Somos una tienda dedicada a ofrecer paginas web cuidadosamente creadas para diferentes estilos, necesidades y presupuestos.</p>
+                <p>Nuestro objetivo es brindar una experiencia sencilla, agradable y confiable, permitiendo que cada persona encuentre una pagina web que se adapten a sus gustos.</p>
                 <div class="about-items">
                     <div><strong>01</strong><span>Productos personalizados</span></div>
                     <div><strong>02</strong><span>Calidad y confianza</span></div>
@@ -88,12 +90,13 @@
         </section>
     </main>
 
-    <!-- PIE DE PÁGINA (los datos de contacto se cargan desde MongoDB) -->
+    <!-- PIE DE PÁGINA -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="footer-brand-header">
-                    <img src="img/logo.png" alt="Logo Faweb" class="footer-logo-img">
+                    <img src="Captura.PNG" alt="Logo Faweb" class="footer-logo-img"
+                         onerror="this.src='https://via.placeholder.com/45/dfc2a9/ffffff?text=F'">
                     <h2>faweb</h2>
                 </div>
                 <p>Productos seleccionados para acompañar cada momento especial.</p>
@@ -117,19 +120,18 @@
 
             <div class="footer-column">
                 <h3>Contacto</h3>
-                <p>📧 <span data-config="correo">contacto@faweb.com</span></p>
-                <p>📱 <span data-config="telefonoVisible">+57 300 000 0000</span></p>
-                <p>📍 <span data-config="ubicacion">Colombia</span></p>
+                <p>📧 contacto@faweb.com</p>
+                <p>📱 +57 300 000 0000</p>
+                <p>📍 Colombia</p>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>© <span data-anio>2026</span> <span data-config="nombreTienda">Faweb</span>. Todos los derechos reservados.</p>
+            <p>© 2026 Faweb. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="scrip/nucleo.js"></script>
-    <script src="scrip/carrito.js"></script>
+    <script>/* carga app.js siempre actualizado */document.write('<script src="app.js?v=' + Date.now() + '"><\/script>');</script>
 </body>
 </html>

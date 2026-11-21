@@ -1,0 +1,45 @@
+FAWEB — CÓMO HACER CAMBIOS
+==========================
+
+Todo lo que se repite en varias páginas está en UN solo archivo:
+
+    datos.js
+
+Ábrelo con el Bloc de notas o con VS Code, cambia lo que quieras,
+guarda y recarga la página con Ctrl + F5. El cambio aparece solo en:
+inicio, catálogo, las 4 páginas de categoría, carrito y contacto.
+
+QUÉ PUEDES CAMBIAR EN datos.js
+------------------------------
+  whatsapp         número al que llegan los pedidos del carrito
+                   (código de país + número, sin + ni espacios: 573001234567)
+  telefonoVisible  cómo se ve el teléfono en la página (+57 300 123 4567)
+  correo           correo de contacto (pie de página, contacto, formulario)
+
+  En cada categoría:
+  nombre           Baja, Media, Alta, Premium…
+  precio           SIN puntos ni $   ->  precio: 200000,
+  exclusivo        true = muestra la etiqueta "EXCLUSIVO"
+  resumen          texto corto de la tarjeta
+  descripcion      texto largo de la página de la categoría
+  caracteristicas  la lista con chulitos (cada una entre comillas y con coma)
+  idealPara, envio, garantia   filas de la tabla
+  imagen / imagenTarjeta       enlace de una foto, o un archivo de esta
+                               carpeta, por ejemplo "img/media.jpg"
+
+REGLAS PARA NO DAÑAR NADA
+-------------------------
+  * El texto va entre comillas "así". Si necesitas comillas dentro
+    del texto, usa comillas simples: "Plan 'Pro'".
+  * No borres las comas del final de las líneas.
+  * No cambies "id" ni "numero".
+  * Si la página se queda sin tarjetas después de un cambio, casi
+    siempre es una coma o una comilla que falta en datos.js.
+
+Los textos que NO se repiten (portada, "Sobre nosotros", preguntas
+frecuentes) se siguen editando directamente en su archivo .html.
+
+AL SUBIRLO A UN HOSTING
+-----------------------
+Sube también datos.js y .htaccess. El .htaccess hace que el navegador
+siempre muestre la versión más nueva apenas subes un cambio.

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <!-- Siempre cargar la versión más reciente (los cambios se ven al recargar) -->
@@ -10,24 +9,20 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | Faweb</title>
-    <meta name="description"
-        content="Faweb: descubre nuestras categorías de productos para todos los gustos y presupuestos.">
-   
-    <link rel="stylesheet" href="./css/index.css">
+    <meta name="description" content="Faweb: descubre nuestras categorías de productos para todos los gustos y presupuestos.">
+    <script>/* carga index.css siempre actualizado */document.write('<link rel="stylesheet" href="index.css?v=' + Date.now() + '">');</script>
+    <noscript><link rel="stylesheet" href="index.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
     <!-- ENCABEZADO -->
     <header class="header">
         <a href="index.html" class="logo">
             <img src="Captura.PNG" alt="Logo Faweb" class="logo-img"
-                onerror="this.src='https://via.placeholder.com/50/dfc2a9/ffffff?text=F'">
+                 onerror="this.src='https://via.placeholder.com/50/dfc2a9/ffffff?text=F'">
             <div class="logo-text">
                 <h1>faweb</h1>
                 <span>DISEÑO Y DESARROLLO WEB</span>
@@ -35,22 +30,17 @@
         </a>
 
         <nav class="menu" id="menu" aria-label="Navegación principal">
-            <a href="index.html" class="active" aria-current="page">Inicio</a>
-            <a href="productos.html">Productos</a>
-            <a href="nosotros.html">Sobre nosotros</a>
-            <a href="contacto.html">Contacto</a>
-           
+                <a href="index.html" class="active" aria-current="page">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="nosotros.html">Sobre nosotros</a>
+                <a href="contacto.html">Contacto</a>
         </nav>
 
         <div class="header-actions">
-             <div class="cuenta" id="cuenta">
-                <a href="login.html" class="cuenta-btn">👤 <span>Ingresar</span></a>
-            </div>
-            <a href="carrito.html "cart-button" aria-label="Ver carrito">
+            <a href="carrito.html" class="cart-button" aria-label="Ver carrito">
                 🛒 <span id="contador">0</span>
             </a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false"
-                aria-controls="menu">
+            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -72,30 +62,16 @@
                 <a href="productos.html" class="hero-button">Explorar categorías</a>
             </div>
             <figure class="hero-image">
-                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80"
-                    alt="Productos elegantes">
+              <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80" alt="Productos elegantes">
             </figure>
         </section>
 
         <!-- BENEFICIOS -->
         <section class="section">
             <div class="benefits">
-                <div class="benefit">
-                    <div class="icon">✨</div>
-                    <h3>Productos seleccionados</h3>
-                    <p>Cada artículo es elegido con cuidado para ofrecerte lo mejor de cada categoría.</p>
-                </div>
-                <div class="benefit">
-                    <div class="icon">🤝</div>
-                    <h3>Calidad y confianza</h3>
-                    <p>Trabajamos para que tu experiencia de compra sea clara, segura y agradable.</p>
-                </div>
-                <div class="benefit">
-                    <div class="icon">🚚</div>
-                    <h3>Envíos a Colombia</h3>
-                    <p>Recibe tu pedido donde estés. <a href="ayuda.html#envios" class="card-link" style="margin:0">Ver
-                            envíos</a></p>
-                </div>
+                <div class="benefit"><div class="icon">✨</div><h3>Productos seleccionados</h3><p>Cada artículo es elegido con cuidado para ofrecerte lo mejor de cada categoría.</p></div>
+                <div class="benefit"><div class="icon">🤝</div><h3>Calidad y confianza</h3><p>Trabajamos para que tu experiencia de compra sea clara, segura y agradable.</p></div>
+                <div class="benefit"><div class="icon">🚚</div><h3>Envíos a Colombia</h3><p>Recibe tu pedido donde estés. <a href="ayuda.html#envios" class="card-link" style="margin:0">Ver envíos</a></p></div>
             </div>
         </section>
 
@@ -106,25 +82,92 @@
                 <h2>Nuestras categorías</h2>
                 <span>Diferentes opciones para encontrar exactamente lo que buscas.</span>
             </header>
+            <div class="cards">
+                <article class="card">
+                    <div class="card-image">
+                        <a href="producto-1.html" tabindex="-1" aria-hidden="true">
+                            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=80" alt="Categoría baja" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <span class="category-label">CATEGORÍA 01</span>
+                        <h3><a href="producto-1.html">Baja</a></h3>
+                        <p>Opciones accesibles y sencillas, ideales para quienes buscan calidad a un precio cómodo.</p>
+                        <a class="card-link" href="producto-1.html">Ver detalles →</a>
+                        <div class="card-bottom">
+                            <span>Desde $30.000</span>
+                            <button type="button" data-add="1">Agregar 🛒</button>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="cards" id="categories-container">
-                <p class="categories-loading">Cargando categorías...</p>
+                <article class="card">
+                    <div class="card-image">
+                        <a href="producto-2.html" tabindex="-1" aria-hidden="true">
+                            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=80" alt="Categoría media" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <span class="category-label">CATEGORÍA 02</span>
+                        <h3><a href="producto-2.html">Media</a></h3>
+                        <p>Página web con lo esencial para mostrar tus productos y recibir los pedidos del carrito directamente, para que el administrador finalice la compra.</p>
+                        <a class="card-link" href="producto-2.html">Ver detalles →</a>
+                        <div class="card-bottom">
+                            <span>Desde $200.000</span>
+                            <button type="button" data-add="2">Agregar 🛒</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <a href="producto-3.html" tabindex="-1" aria-hidden="true">
+                            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80" alt="Categoría alta" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <span class="category-label">CATEGORÍA 03</span>
+                        <h3><a href="producto-3.html">Alta</a></h3>
+                        <p>Productos con diseños sofisticados y materiales seleccionados para una experiencia superior.</p>
+                        <a class="card-link" href="producto-3.html">Ver detalles →</a>
+                        <div class="card-bottom">
+                            <span>Desde $180.000</span>
+                            <button type="button" data-add="3">Agregar 🛒</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card premium-card">
+                    <div class="premium-badge">EXCLUSIVO</div>
+                    <div class="card-image">
+                        <a href="producto-4.html" tabindex="-1" aria-hidden="true">
+                            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=80" alt="Categoría premium" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <span class="category-label">CATEGORÍA 04</span>
+                        <h3><a href="producto-4.html">Premium</a></h3>
+                        <p>Nuestra selección más exclusiva, creada para quienes buscan elegancia, distinción y lujo.</p>
+                        <a class="card-link" href="producto-4.html">Ver detalles →</a>
+                        <div class="card-bottom">
+                            <span>Desde $350.000</span>
+                            <button type="button" data-add="4">Agregar 🛒</button>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
         <!-- SOBRE NOSOTROS (resumen) -->
         <section class="about">
             <figure class="about-image">
-                <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=80"
-                    alt="Sobre nosotros" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=80" alt="Sobre nosotros" loading="lazy">
             </figure>
             <div class="about-content">
                 <p class="small-title">CONÓCENOS</p>
                 <h2>Sobre nosotros</h2>
-                <p>Somos una tienda dedicada a ofrecer productos cuidadosamente seleccionados para diferentes estilos,
-                    necesidades y presupuestos.</p>
-                <p>Nuestro objetivo es brindar una experiencia sencilla, agradable y confiable, permitiendo que cada
-                    persona encuentre productos que se adapten a sus gustos.</p>
+                <p>Somos una tienda dedicada a ofrecer productos cuidadosamente seleccionados para diferentes estilos, necesidades y presupuestos.</p>
+                <p>Nuestro objetivo es brindar una experiencia sencilla, agradable y confiable, permitiendo que cada persona encuentre productos que se adapten a sus gustos.</p>
                 <a href="nosotros.html" class="btn btn-primary" style="margin-top:10px">Conoce más</a>
             </div>
         </section>
@@ -143,7 +186,7 @@
             <div class="footer-brand">
                 <div class="footer-brand-header">
                     <img src="Captura.PNG" alt="Logo Faweb" class="footer-logo-img"
-                        onerror="this.src='https://via.placeholder.com/45/dfc2a9/ffffff?text=F'">
+                         onerror="this.src='https://via.placeholder.com/45/dfc2a9/ffffff?text=F'">
                     <h2>faweb</h2>
                 </div>
                 <p>Productos seleccionados para acompañar cada momento especial.</p>
@@ -179,9 +222,6 @@
     </footer>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-    <script src="./scrip/categorias.js"></script>
-    <script src="./scrip/nucleo.js"></script>
+    <script>/* carga app.js siempre actualizado */document.write('<script src="app.js?v=' + Date.now() + '"><\/script>');</script>
 </body>
-
 </html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Siempre cargar la versión más reciente (los cambios se ven al recargar) -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baja | Faweb</title>
+    <meta name="description" content="Categoría Baja de Faweb: Opciones accesibles y sencillas, ideales para quienes buscan calidad a un precio cómodo.">
+    <script>/* carga index.css siempre actualizado */document.write('<link rel="stylesheet" href="index.css?v=' + Date.now() + '">');</script>
+    <noscript><link rel="stylesheet" href="index.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="Captura.PNG" alt="Logo Faweb" class="logo-img"
+                 onerror="this.src='https://via.placeholder.com/50/dfc2a9/ffffff?text=F'">
+            <div class="logo-text">
+                <h1>faweb</h1>
+                <span>DISEÑO Y DESARROLLO WEB</span>
+            </div>
+        </a>
+
+        <nav class="menu" id="menu" aria-label="Navegación principal">
+                <a href="index.html">Inicio</a>
+                <a href="productos.html" class="active" aria-current="page">Productos</a>
+                <a href="nosotros.html">Sobre nosotros</a>
+                <a href="contacto.html">Contacto</a>
+        </nav>
+
+        <div class="header-actions">
+            <a href="carrito.html" class="cart-button" aria-label="Ver carrito">
+                🛒 <span id="contador">0</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+            <a href="index.html">Inicio</a> <span>/</span>
+            <a href="productos.html">Productos</a> <span>/</span>
+            <span>Baja</span>
+        </nav>
+
+        <article class="product-detail">
+            <figure class="product-media">
+            
+                <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=80" alt="Categoría baja">
+            </figure>
+
+            <div class="product-info">
+                <span class="category-label">CATEGORÍA 01</span>
+                <h2>Baja</h2>
+                <div class="product-price">Desde $100.000 <small>COP</small></div>
+                <p class="lead">La categoria baja da acceso al administrador de subir productos y precios permitiendo al usuario ver su catalogo completo.</p>
+
+                <ul class="feature-list">
+                        <li>Diseños sencillos y versátiles</li>
+                        <li>Materiales prácticos para el uso diario</li>
+                        <li>El precio más cómodo de la tienda</li>
+                        <li>Soporte por correo y WhatsApp</li>
+                </ul>
+
+                <div class="buy-row">
+                    <div class="qty" aria-label="Cantidad">
+                        <button type="button" id="qty-menos" aria-label="Disminuir cantidad">−</button>
+                        <input type="number" id="qty-input" value="1" min="1" max="20" aria-label="Cantidad">
+                        <button type="button" id="qty-mas" aria-label="Aumentar cantidad">+</button>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-add="1" data-qty-from="#qty-input">Agregar al carrito 🛒</button>
+                </div>
+
+                <table class="specs">
+                    <tbody>
+                        <tr><th scope="row">Categoría</th><td>01 · Baja</td></tr>
+                        <tr><th scope="row">Precio desde</th><td>$100.000 COP</td></tr>
+                        <tr><th scope="row">Ideal para</th><td>Uso diario y primeras compras</td></tr>
+                        <tr><th scope="row">Garantía</th><td>30 días</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <section class="categories" style="padding-top:20px">
+            <header class="section-title">
+                <p>TAMBIÉN TE PUEDE INTERESAR</p>
+                <h2>Otras categorías</h2>
+                <span>Explora el resto de nuestro catálogo.</span>
+            </header>
+            <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+                <article class="card">
+                    <div class="card-image">
+                        <a href="producto-2.html" tabindex="-1" aria-hidden="true">
+                            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=80" alt="Categoría media" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <span class="category-label">CATEGORÍA 02</span>
+                        <h3><a href="producto-2.html">Media</a></h3>
+                        <p>Página web con lo esencial para mostrar tus productos y recibir los pedidos del carrito directamente, para que el administrador finalice la compra.</p>
+                        <a class="card-link" href="producto-2.html">Ver detalles →</a>
+                        <div class="card-bottom">
+                            <span>Desde $200.000</span>
+                            <button type="button" data-add="2">Agregar 🛒</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-image">
+                        <a href="producto-3.html" tabindex="-1" aria-hidden="true">
+                            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80" alt="Categoría alta" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <span class="category-label">CATEGORÍA 03</span>
+                        <h3><a href="producto-3.html">Alta</a></h3>
+                        <p>Productos con diseños sofisticados y materiales seleccionados para una experiencia superior.</p>
+                        <a class="card-link" href="producto-3.html">Ver detalles →</a>
+                        <div class="card-bottom">
+                            <span>Desde $180.000</span>
+                            <button type="button" data-add="3">Agregar 🛒</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="card premium-card">
+                    <div class="premium-badge">EXCLUSIVO</div>
+                    <div class="card-image">
+                        <a href="producto-4.html" tabindex="-1" aria-hidden="true">
+                            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=80" alt="Categoría premium" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <span class="category-label">CATEGORÍA 04</span>
+                        <h3><a href="producto-4.html">Premium</a></h3>
+                        <p>Nuestra selección más exclusiva, creada para quienes buscan elegancia, distinción y lujo.</p>
+                        <a class="card-link" href="producto-4.html">Ver detalles →</a>
+                        <div class="card-bottom">
+                            <span>Desde $350.000</span>
+                            <button type="button" data-add="4">Agregar 🛒</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="center-action"><a href="productos.html" class="btn btn-secondary">Ver todos los productos</a></div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-brand-header">
+                    <img src="Captura.PNG" alt="Logo Faweb" class="footer-logo-img"
+                         onerror="this.src='https://via.placeholder.com/45/dfc2a9/ffffff?text=F'">
+                    <h2>faweb</h2>
+                </div>
+                <p>Productos seleccionados para acompañar cada momento especial.</p>
+            </div>
+
+            <nav class="footer-column" aria-label="Explorar">
+                <h3>Explorar</h3>
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="nosotros.html">Sobre nosotros</a>
+                <a href="carrito.html">Carrito</a>
+            </nav>
+
+            <nav class="footer-column" aria-label="Ayuda">
+                <h3>Ayuda</h3>
+                <a href="ayuda.html#preguntas">Preguntas frecuentes</a>
+                <a href="ayuda.html#envios">Envíos</a>
+                <a href="ayuda.html#devoluciones">Devoluciones</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <p>📧 contacto@faweb.com</p>
+                <p>📱 +57 300 000 0000</p>
+                <p>📍 Colombia</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Faweb. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script>/* carga app.js siempre actualizado */document.write('<script src="app.js?v=' + Date.now() + '"><\/script>');</script>
+</body>
+</html>
